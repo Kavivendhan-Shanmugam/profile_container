@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #cccccc;
+}
+
+.cta-button {
+  margin-top: 2rem;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #00c6ff;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: #0072ff;
+}
