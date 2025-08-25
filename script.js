@@ -33,8 +33,11 @@ async function loadProfileData() {
 // Set default data when API is not available
 function setDefaultData() {
     profileData = {
-        subtitle: "Full Stack Developer & UI/UX Designer",
-        description: "Passionate about creating digital experiences that combine beautiful design with powerful functionality. I specialize in modern web technologies and user-centered design.",
+        name: "我是Kavi Vendhan",
+        subtitle: "A BRAVE CLIMBER IN THE WORLD OF PRODUCT DESIGN",
+        description_line1: "—一个在产品设计屋努力攀登的新生",
+        description_line2: "拥有一颗童真无泪界的好奇心和一颗心无旁骛的探索力",
+        description_line3: "这句话来自首席Smao",
         about: "I'm a passionate developer with over 3 years of experience in creating digital solutions that make a difference. My journey started with curiosity about how websites work, and it has evolved into a career focused on building exceptional user experiences.",
         projects_count: "25+",
         experience_years: "3+",
@@ -59,9 +62,10 @@ function updateUIWithData(data) {
 
 // Initialize profile image click listener for admin access
 function initializeClickListener() {
-    const profileImg = document.getElementById('profile-image');
+    const flipContainer = document.getElementById('flip-container');
     
-    profileImg.addEventListener('click', function() {
+    // Add click listener to the entire flip container
+    flipContainer.addEventListener('click', function(e) {
         clickCount++;
         
         // Clear existing timer
@@ -78,6 +82,7 @@ function initializeClickListener() {
         if (clickCount === 11) {
             openAdminModal();
             clickCount = 0; // Reset counter
+            e.preventDefault(); // Prevent the flip animation
         }
     });
 }

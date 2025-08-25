@@ -15,12 +15,14 @@
                 <span>KV</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">作品</a></li>
+                <li><a href="#skills">博客</a></li>
+                <li><a href="#contact">关于我</a></li>
             </ul>
+            <div class="nav-download">
+                <a href="#" class="btn btn-primary">📋 下载简历与作品集</a>
+            </div>
             <div class="nav-toggle">
                 <span></span>
                 <span></span>
@@ -35,20 +37,41 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
-                        Hi, I'm <span class="highlight">Kavi Vendhan</span>
+                        你好👋，<br>
+                        <span class="editable" data-field="name">我是Kavi Vendhan</span>
                     </h1>
-                    <p class="hero-subtitle editable" data-field="subtitle">Full Stack Developer & UI/UX Designer</p>
-                    <p class="hero-description editable" data-field="description">
-                        Passionate about creating digital experiences that combine beautiful design with powerful functionality. 
-                        I specialize in modern web technologies and user-centered design.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <p class="hero-subtitle editable" data-field="subtitle">A BRAVE CLIMBER IN THE WORLD OF PRODUCT DESIGN</p>
+                    <div class="hero-description">
+                        <p class="editable" data-field="description_line1">—一个在产品设计屋努力攀登的新生</p>
+                        <p class="editable" data-field="description_line2">拥有一颗童真无泪界的好奇心和一颗心无旁骛的探索力</p>
+                        <p class="editable" data-field="description_line3">这句话来自首席Smao</p>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img id="profile-image" src="https://via.placeholder.com/300x300/6366f1/ffffff?text=KV" alt="Kavi Vendhan" class="profile-img">
+                    <div class="flip-container" id="flip-container">
+                        <div class="flip-front">
+                            <!-- Character illustration - placeholder for now -->
+                            <svg width="280" height="280" viewBox="0 0 280 280">
+                                <circle cx="140" cy="140" r="130" fill="#fff" opacity="0.9"/>
+                                <!-- Simple character face -->
+                                <circle cx="115" cy="120" r="8" fill="#333"/>
+                                <circle cx="165" cy="120" r="8" fill="#333"/>
+                                <path d="M120 160 Q140 180 160 160" stroke="#333" stroke-width="3" fill="none"/>
+                                <!-- Hair/hat -->
+                                <path d="M90 90 Q140 60 190 90" stroke="#333" stroke-width="4" fill="none"/>
+                                <!-- Glasses -->
+                                <circle cx="115" cy="120" r="15" stroke="#333" stroke-width="2" fill="none"/>
+                                <circle cx="165" cy="120" r="15" stroke="#333" stroke-width="2" fill="none"/>
+                                <line x1="130" y1="120" x2="150" y2="120" stroke="#333" stroke-width="2"/>
+                                <!-- Scarf/clothing -->
+                                <path d="M100 200 Q140 220 180 200 Q140 240 100 200" fill="#e53e3e" opacity="0.8"/>
+                            </svg>
+                        </div>
+                        <div class="flip-back">
+                            <!-- Your actual photo on back side -->
+                            <img id="profile-image" src="https://via.placeholder.com/280x280/6366f1/ffffff?text=KV" alt="Kavi Vendhan" class="profile-img">
+                        </div>
+                    </div>
                     <div class="hero-decorations">
                         <div class="decoration decoration-1"></div>
                         <div class="decoration decoration-2"></div>
