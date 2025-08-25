@@ -15,13 +15,14 @@
                 <span>KV</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">作品</a></li>
-                <li><a href="#skills">博客</a></li>
-                <li><a href="#contact">关于我</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-download">
-                <a href="#" class="btn btn-primary">📋 下载简历与作品集</a>
+                <a href="#" class="btn btn-primary">📋 Download Resume</a>
             </div>
             <div class="nav-toggle">
                 <span></span>
@@ -37,39 +38,64 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
-                        你好👋，<br>
-                        <span class="editable" data-field="name">我是Kavi Vendhan</span>
+                        Hello 👋,<br>
+                        <span class="editable" data-field="name">I'm Kavi Vendhan</span>
                     </h1>
-                    <p class="hero-subtitle editable" data-field="subtitle">A BRAVE CLIMBER IN THE WORLD OF PRODUCT DESIGN</p>
+                    <p class="hero-subtitle editable" data-field="subtitle">A PASSIONATE DEVELOPER & DESIGNER</p>
                     <div class="hero-description">
-                        <p class="editable" data-field="description_line1">—一个在产品设计屋努力攀登的新生</p>
-                        <p class="editable" data-field="description_line2">拥有一颗童真无泪界的好奇心和一颗心无旁骛的探索力</p>
-                        <p class="editable" data-field="description_line3">这句话来自首席Smao</p>
+                        <p class="editable" data-field="description_line1">— A passionate developer climbing in the world of technology</p>
+                        <p class="editable" data-field="description_line2">With boundless curiosity and relentless exploration</p>
+                        <p class="editable" data-field="description_line3">Building digital experiences that matter</p>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="flip-container" id="flip-container">
                         <div class="flip-front">
-                            <!-- Character illustration - placeholder for now -->
-                            <svg width="280" height="280" viewBox="0 0 280 280">
-                                <circle cx="140" cy="140" r="130" fill="#fff" opacity="0.9"/>
-                                <!-- Simple character face -->
-                                <circle cx="115" cy="120" r="8" fill="#333"/>
-                                <circle cx="165" cy="120" r="8" fill="#333"/>
-                                <path d="M120 160 Q140 180 160 160" stroke="#333" stroke-width="3" fill="none"/>
-                                <!-- Hair/hat -->
-                                <path d="M90 90 Q140 60 190 90" stroke="#333" stroke-width="4" fill="none"/>
+                            <!-- Character illustration -->
+                            <img src="assets/character.png" alt="Character" class="character-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <!-- Fallback SVG if image doesn't load -->
+                            <svg width="280" height="280" viewBox="0 0 280 280" style="display:none;">
+                                <!-- Person with glasses and red scarf -->
+                                <defs>
+                                    <radialGradient id="bgGrad" cx="50%" cy="30%" r="70%">
+                                        <stop offset="0%" style="stop-color:#8B5FBF;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#4C1D95;stop-opacity:1" />
+                                    </radialGradient>
+                                </defs>
+                                <!-- Background circle -->
+                                <circle cx="140" cy="140" r="135" fill="url(#bgGrad)"/>
+                                <!-- Face -->
+                                <ellipse cx="140" cy="125" rx="45" ry="55" fill="#fde1d7"/>
+                                <!-- Hair -->
+                                <path d="M95 85 Q140 60 185 85 Q185 100 180 110 Q140 95 100 110 Q95 100 95 85" fill="#4a4a4a"/>
                                 <!-- Glasses -->
-                                <circle cx="115" cy="120" r="15" stroke="#333" stroke-width="2" fill="none"/>
-                                <circle cx="165" cy="120" r="15" stroke="#333" stroke-width="2" fill="none"/>
-                                <line x1="130" y1="120" x2="150" y2="120" stroke="#333" stroke-width="2"/>
-                                <!-- Scarf/clothing -->
-                                <path d="M100 200 Q140 220 180 200 Q140 240 100 200" fill="#e53e3e" opacity="0.8"/>
+                                <circle cx="120" cy="115" r="18" stroke="#333" stroke-width="3" fill="none"/>
+                                <circle cx="160" cy="115" r="18" stroke="#333" stroke-width="3" fill="none"/>
+                                <line x1="138" y1="115" x2="142" y2="115" stroke="#333" stroke-width="3"/>
+                                <!-- Eyes -->
+                                <circle cx="120" cy="115" r="4" fill="#333"/>
+                                <circle cx="160" cy="115" r="4" fill="#333"/>
+                                <!-- Nose -->
+                                <ellipse cx="140" cy="125" rx="2" ry="4" fill="#e5b8a7"/>
+                                <!-- Mouth -->
+                                <path d="M130 140 Q140 150 150 140" stroke="#333" stroke-width="2" fill="none"/>
+                                <!-- Hoodie -->
+                                <path d="M95 170 Q140 155 185 170 L185 250 Q140 265 95 250 Z" fill="#dc2626"/>
+                                <!-- Hood -->
+                                <path d="M95 170 Q140 145 185 170 Q140 160 95 170" fill="#b91c1c"/>
+                                <!-- Body/shirt under hoodie -->
+                                <ellipse cx="140" cy="200" rx="35" ry="25" fill="#f3f4f6"/>
+                                <!-- Arms -->
+                                <ellipse cx="105" cy="200" rx="15" ry="35" fill="#fde1d7"/>
+                                <ellipse cx="175" cy="200" rx="15" ry="35" fill="#fde1d7"/>
+                                <!-- Hands -->
+                                <circle cx="105" cy="230" r="12" fill="#fde1d7"/>
+                                <circle cx="175" cy="230" r="12" fill="#fde1d7"/>
                             </svg>
                         </div>
                         <div class="flip-back">
-                            <!-- Your actual photo on back side -->
-                            <img id="profile-image" src="https://via.placeholder.com/280x280/6366f1/ffffff?text=KV" alt="Kavi Vendhan" class="profile-img">
+                            <!-- Your actual photo -->
+                            <img id="profile-image" src="assets/IMG_7314.jpg" alt="Kavi Vendhan" class="profile-img" onerror="this.src='https://via.placeholder.com/280x280/6366f1/ffffff?text=KV'">
                         </div>
                     </div>
                     <div class="hero-decorations">

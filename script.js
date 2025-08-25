@@ -33,11 +33,11 @@ async function loadProfileData() {
 // Set default data when API is not available
 function setDefaultData() {
     profileData = {
-        name: "我是Kavi Vendhan",
-        subtitle: "A BRAVE CLIMBER IN THE WORLD OF PRODUCT DESIGN",
-        description_line1: "—一个在产品设计屋努力攀登的新生",
-        description_line2: "拥有一颗童真无泪界的好奇心和一颗心无旁骛的探索力",
-        description_line3: "这句话来自首席Smao",
+        name: "I'm Kavi Vendhan",
+        subtitle: "A PASSIONATE DEVELOPER & DESIGNER",
+        description_line1: "— A passionate developer climbing in the world of technology",
+        description_line2: "With boundless curiosity and relentless exploration",
+        description_line3: "Building digital experiences that matter",
         about: "I'm a passionate developer with over 3 years of experience in creating digital solutions that make a difference. My journey started with curiosity about how websites work, and it has evolved into a career focused on building exceptional user experiences.",
         projects_count: "25+",
         experience_years: "3+",
