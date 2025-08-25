@@ -51,51 +51,51 @@
                 <div class="hero-image">
                     <div class="flip-container" id="flip-container">
                         <div class="flip-front">
-                            <!-- Character illustration -->
-                            <img src="assets/character.png" alt="Character" class="character-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                            <!-- Fallback SVG if image doesn't load -->
-                            <svg width="280" height="280" viewBox="0 0 280 280" style="display:none;">
-                                <!-- Person with glasses and red scarf -->
+                            <!-- Character illustration that matches your reference -->
+                            <svg width="280" height="280" viewBox="0 0 280 280">
+                                <!-- Person with glasses and red hoodie like your reference -->
                                 <defs>
                                     <radialGradient id="bgGrad" cx="50%" cy="30%" r="70%">
                                         <stop offset="0%" style="stop-color:#8B5FBF;stop-opacity:1" />
                                         <stop offset="100%" style="stop-color:#4C1D95;stop-opacity:1" />
                                     </radialGradient>
                                 </defs>
-                                <!-- Background circle -->
-                                <circle cx="140" cy="140" r="135" fill="url(#bgGrad)"/>
+                                <!-- Background - transparent to show gradient behind -->
                                 <!-- Face -->
-                                <ellipse cx="140" cy="125" rx="45" ry="55" fill="#fde1d7"/>
-                                <!-- Hair -->
-                                <path d="M95 85 Q140 60 185 85 Q185 100 180 110 Q140 95 100 110 Q95 100 95 85" fill="#4a4a4a"/>
-                                <!-- Glasses -->
-                                <circle cx="120" cy="115" r="18" stroke="#333" stroke-width="3" fill="none"/>
-                                <circle cx="160" cy="115" r="18" stroke="#333" stroke-width="3" fill="none"/>
-                                <line x1="138" y1="115" x2="142" y2="115" stroke="#333" stroke-width="3"/>
-                                <!-- Eyes -->
-                                <circle cx="120" cy="115" r="4" fill="#333"/>
-                                <circle cx="160" cy="115" r="4" fill="#333"/>
+                                <ellipse cx="140" cy="120" rx="50" ry="60" fill="#fde1d7"/>
+                                <!-- Hair/Head shape -->
+                                <path d="M90 75 Q140 45 190 75 Q190 95 185 110 Q140 85 95 110 Q90 95 90 75" fill="#2d2d2d"/>
+                                <!-- Glasses frame -->
+                                <circle cx="115" cy="110" r="20" stroke="#1a1a1a" stroke-width="3" fill="rgba(255,255,255,0.1)"/>
+                                <circle cx="165" cy="110" r="20" stroke="#1a1a1a" stroke-width="3" fill="rgba(255,255,255,0.1)"/>
+                                <line x1="135" y1="110" x2="145" y2="110" stroke="#1a1a1a" stroke-width="3"/>
+                                <!-- Eyes behind glasses -->
+                                <circle cx="115" cy="110" r="5" fill="#1a1a1a"/>
+                                <circle cx="165" cy="110" r="5" fill="#1a1a1a"/>
                                 <!-- Nose -->
-                                <ellipse cx="140" cy="125" rx="2" ry="4" fill="#e5b8a7"/>
+                                <ellipse cx="140" cy="125" rx="3" ry="6" fill="#e5b8a7"/>
                                 <!-- Mouth -->
-                                <path d="M130 140 Q140 150 150 140" stroke="#333" stroke-width="2" fill="none"/>
-                                <!-- Hoodie -->
-                                <path d="M95 170 Q140 155 185 170 L185 250 Q140 265 95 250 Z" fill="#dc2626"/>
-                                <!-- Hood -->
-                                <path d="M95 170 Q140 145 185 170 Q140 160 95 170" fill="#b91c1c"/>
-                                <!-- Body/shirt under hoodie -->
-                                <ellipse cx="140" cy="200" rx="35" ry="25" fill="#f3f4f6"/>
-                                <!-- Arms -->
-                                <ellipse cx="105" cy="200" rx="15" ry="35" fill="#fde1d7"/>
-                                <ellipse cx="175" cy="200" rx="15" ry="35" fill="#fde1d7"/>
+                                <path d="M125 145 Q140 155 155 145" stroke="#1a1a1a" stroke-width="2" fill="none"/>
+                                <!-- Red Hoodie -->
+                                <path d="M85 165 Q140 150 195 165 L195 260 Q140 275 85 260 Z" fill="#dc2626"/>
+                                <!-- Hoodie shadow/depth -->
+                                <path d="M85 165 Q140 145 195 165 Q140 155 85 165" fill="#b91c1c"/>
+                                <!-- White shirt underneath -->
+                                <ellipse cx="140" cy="195" rx="40" ry="30" fill="#f8f9fa"/>
+                                <!-- Arms in hoodie -->
+                                <ellipse cx="100" cy="190" rx="18" ry="40" fill="#fde1d7"/>
+                                <ellipse cx="180" cy="190" rx="18" ry="40" fill="#fde1d7"/>
                                 <!-- Hands -->
-                                <circle cx="105" cy="230" r="12" fill="#fde1d7"/>
-                                <circle cx="175" cy="230" r="12" fill="#fde1d7"/>
+                                <ellipse cx="100" cy="225" rx="15" ry="15" fill="#fde1d7"/>
+                                <ellipse cx="180" cy="225" rx="15" ry="15" fill="#fde1d7"/>
+                                <!-- Sitting position legs -->
+                                <ellipse cx="120" cy="250" rx="20" ry="15" fill="#4ade80"/>
+                                <ellipse cx="160" cy="250" rx="20" ry="15" fill="#4ade80"/>
                             </svg>
                         </div>
                         <div class="flip-back">
-                            <!-- Your actual photo -->
-                            <img id="profile-image" src="assets/IMG_7314.jpg" alt="Kavi Vendhan" class="profile-img" onerror="this.src='https://via.placeholder.com/280x280/6366f1/ffffff?text=KV'">
+                            <!-- Your actual photo - replace with assets/profile.jpg when you add it -->
+                            <img id="profile-image" src="assets/profile.jpg" alt="Kavi Vendhan" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=280&h=280&fit=crop&crop=face'">
                         </div>
                     </div>
                     <div class="hero-decorations">
