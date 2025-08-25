@@ -1,0 +1,14 @@
+# Assets Directory
+
+Place your images and other assets in this directory.
+
+## Profile Image
+Replace the placeholder profile image URL in index.html with your own image:
+- Place your profile photo in this directory (e.g., profile.jpg)
+- Update the src attribute: `src="assets/profile.jpg"`
+
+## Other Assets
+- Project screenshots
+- Icons
+- Documents (resume, etc.)
+- Any other media files

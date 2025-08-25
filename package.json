@@ -1,0 +1,26 @@
+{
+  "name": "kavi-vendhan-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Kavi Vendhan with admin panel and dynamic content management",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build step required for static site'",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": [
+    "portfolio",
+    "netlify",
+    "static-site",
+    "javascript",
+    "supabase"
+  ],
+  "author": "Kavi Vendhan",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
