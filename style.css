@@ -223,10 +223,11 @@ body {
 .flip-front {
     background: linear-gradient(135deg, #8B5FBF 0%, #6B46C1 50%, #4C1D95 100%);
     border: 4px solid rgba(255, 255, 255, 0.3);
+    transform: rotateY(180deg);
 }
 
 .flip-back {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
     background: transparent;
     border: none;
 }
