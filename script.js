@@ -311,9 +311,9 @@ function toggleMobileNav() {
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.background = 'rgba(26, 31, 77, 0.95)';
     } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.background = 'rgba(26, 31, 77, 0.8)';
     }
 });
 
