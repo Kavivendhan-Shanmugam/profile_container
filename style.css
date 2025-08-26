@@ -316,6 +316,7 @@ body {
     background: transparent;
     border: none;
     transform: rotateY(180deg);
+    z-index: 2;
 }
 
 .flip-back {
