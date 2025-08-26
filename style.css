@@ -92,7 +92,7 @@ body {
 
 /* SEGIO Background Text */
 .hero::after {
-    content: "SEGIO";
+    content: "SERGIO";
     position: absolute;
     font-size: 45vw;
     font-weight: 900;
