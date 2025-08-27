@@ -311,15 +311,15 @@ body {
 }
 
 .flip-front {
-    background: transparent;
-    border: none;
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px solid red;
     transform: rotateY(180deg);
 }
 
 .flip-back {
     transform: rotateY(0deg);
-    background: transparent;
-    border: none;
+    background: rgba(0, 255, 0, 0.1);
+    border: 2px solid green;
 }
 
 .character-image {
