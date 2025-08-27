@@ -288,15 +288,14 @@ body {
     height: 400px;
     position: relative;
     transform-style: preserve-3d;
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
     z-index: 2;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
 }
 
 .flip-container:hover {
-    transform: rotateY(180deg) scale(1.05);
-    filter: drop-shadow(0 30px 60px rgba(139, 95, 191, 0.4));
+    transform: rotateY(180deg);
 }
 
 .flip-front,
@@ -315,15 +314,13 @@ body {
 .flip-front {
     background: transparent;
     border: none;
-    transform: rotateY(-180deg);
-    z-index: 1;
+    transform: rotateY(180deg);
 }
 
 .flip-back {
     transform: rotateY(0deg);
     background: transparent;
     border: none;
-    z-index: 2;
 }
 
 .character-image {
