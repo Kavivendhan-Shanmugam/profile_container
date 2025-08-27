@@ -11,7 +11,35 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeContactForm();
     smoothScroll();
     loadProjects();
+    initializeCardEffects();
 });
+
+// Initialize card hover effects
+function initializeCardEffects() {
+    // Add hover effects to card elements
+    const cardElements = document.querySelectorAll('.project-card, .skill-category, .stat, .social-link, .btn');
+    cardElements.forEach(element => {
+        element.classList.add('card-hover-effect');
+    });
+
+    // Add subtle parallax effect to hero section
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const heroSection = document.querySelector('.hero');
+        const rate = scrolled * -0.5;
+
+        if (heroSection) {
+            heroSection.style.transform = `translateY(${rate}px)`;
+        }
+
+        // Add floating effect to decorations
+        const decorations = document.querySelectorAll('.decoration');
+        decorations.forEach((decoration, index) => {
+            const speed = 0.3 + (index * 0.1);
+            decoration.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+}
 
 // Load profile data from API
 async function loadProfileData() {
