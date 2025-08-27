@@ -360,26 +360,103 @@ function initializeContactForm() {
     });
 }
 
-// Smooth scrolling for navigation links
+// Enhanced smooth scrolling with card transition effects
 function smoothScroll() {
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            
+
             if (targetSection) {
+                // Add card transition effect
+                triggerCardTransition(targetSection);
+
                 const offsetTop = targetSection.offsetTop - 80; // Account for fixed header
-                
+
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
                 });
             }
         });
+    });
+}
+
+// Card transition effect when navigating between sections
+function triggerCardTransition(targetSection) {
+    const allSections = document.querySelectorAll('section');
+
+    // First, animate out the current visible sections
+    allSections.forEach(section => {
+        if (section !== targetSection) {
+            section.style.transform = 'translateX(-100px) scale(0.95)';
+            section.style.opacity = '0.3';
+            section.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        }
+    });
+
+    // After a brief delay, animate in the target section with card effect
+    setTimeout(() => {
+        // Reset all sections first
+        allSections.forEach(section => {
+            section.style.transform = 'translateX(100px) scale(0.95)';
+            section.style.opacity = '0';
+        });
+
+        // Animate in the target section
+        setTimeout(() => {
+            targetSection.style.transform = 'translateX(0) scale(1)';
+            targetSection.style.opacity = '1';
+            targetSection.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+
+            // Animate child elements with stagger effect
+            animateCardElements(targetSection);
+        }, 100);
+
+        // Reset other sections after target is visible
+        setTimeout(() => {
+            allSections.forEach(section => {
+                if (section !== targetSection) {
+                    section.style.transform = 'translateX(0) scale(1)';
+                    section.style.opacity = '1';
+                    section.style.transition = 'all 0.6s ease';
+                }
+            });
+        }, 800);
+    }, 300);
+}
+
+// Animate elements within a section with staggered card effects
+function animateCardElements(section) {
+    const cards = section.querySelectorAll('.project-card, .skill-category, .stat, .contact-info, .contact-form');
+    const textElements = section.querySelectorAll('h1, h2, h3, p, .hero-description p');
+
+    // Animate cards with stagger
+    cards.forEach((card, index) => {
+        card.style.transform = 'translateY(50px) scale(0.8)';
+        card.style.opacity = '0';
+        card.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+
+        setTimeout(() => {
+            card.style.transform = 'translateY(0) scale(1)';
+            card.style.opacity = '1';
+        }, index * 100 + 200);
+    });
+
+    // Animate text elements
+    textElements.forEach((element, index) => {
+        element.style.transform = 'translateY(30px)';
+        element.style.opacity = '0';
+        element.style.transition = 'all 0.5s ease';
+
+        setTimeout(() => {
+            element.style.transform = 'translateY(0)';
+            element.style.opacity = '1';
+        }, index * 50 + 100);
     });
 }
 
