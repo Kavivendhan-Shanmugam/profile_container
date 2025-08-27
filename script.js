@@ -416,22 +416,36 @@ function smoothScroll() {
 
 // Card transition effect when navigating between sections
 function triggerCardTransition(targetSection) {
+    // Create or get the transition overlay
+    let overlay = document.querySelector('.page-transition');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'page-transition';
+        document.body.appendChild(overlay);
+    }
+
+    // Show transition overlay
+    overlay.classList.add('active');
+
     const allSections = document.querySelectorAll('section');
 
     // First, animate out the current visible sections
     allSections.forEach(section => {
         if (section !== targetSection) {
-            section.style.transform = 'translateX(-100px) scale(0.95)';
-            section.style.opacity = '0.3';
-            section.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            section.style.transform = 'translateX(-50px) scale(0.98)';
+            section.style.opacity = '0.4';
+            section.style.transition = 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         }
     });
 
     // After a brief delay, animate in the target section with card effect
     setTimeout(() => {
+        // Hide transition overlay
+        overlay.classList.remove('active');
+
         // Reset all sections first
         allSections.forEach(section => {
-            section.style.transform = 'translateX(100px) scale(0.95)';
+            section.style.transform = 'translateX(50px) scale(0.98)';
             section.style.opacity = '0';
         });
 
@@ -439,11 +453,11 @@ function triggerCardTransition(targetSection) {
         setTimeout(() => {
             targetSection.style.transform = 'translateX(0) scale(1)';
             targetSection.style.opacity = '1';
-            targetSection.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            targetSection.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
 
             // Animate child elements with stagger effect
             animateCardElements(targetSection);
-        }, 100);
+        }, 50);
 
         // Reset other sections after target is visible
         setTimeout(() => {
@@ -451,11 +465,11 @@ function triggerCardTransition(targetSection) {
                 if (section !== targetSection) {
                     section.style.transform = 'translateX(0) scale(1)';
                     section.style.opacity = '1';
-                    section.style.transition = 'all 0.6s ease';
+                    section.style.transition = 'all 0.4s ease';
                 }
             });
-        }, 800);
-    }, 300);
+        }, 600);
+    }, 200);
 }
 
 // Animate elements within a section with staggered card effects
