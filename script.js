@@ -245,25 +245,12 @@ function showProfileEditor() {
 // Initialize modal functionality
 function initializeModal() {
     const modal = document.getElementById('admin-modal');
-    const closeBtn = document.querySelector('.close');
-    const form = document.getElementById('admin-form');
-    
-    // Close modal when clicking X
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
+
     // Close modal when clicking outside
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
-    });
-    
-    // Handle form submission
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        await saveProfileData();
     });
 }
 
