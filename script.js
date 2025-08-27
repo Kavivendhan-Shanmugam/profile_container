@@ -541,28 +541,59 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Add animation on scroll for sections
+// Enhanced scroll-based card animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const cardObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            // Animate the section with card effect
             entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.style.transform = 'translateY(0) scale(1)';
+
+            // Trigger staggered animations for child elements
+            animateCardElements(entry.target);
+        } else {
+            // Subtle out animation when leaving viewport
+            entry.target.style.opacity = '0.8';
+            entry.target.style.transform = 'translateY(10px) scale(0.98)';
         }
     });
 }, observerOptions);
 
-// Observe sections for animation
+// Card element observer for individual cards
+const cardElementObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0) scale(1)';
+            entry.target.classList.add('card-visible');
+        }
+    });
+}, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -30px 0px'
+});
+
+// Initialize scroll animations
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
+        section.style.transform = 'translateY(30px) scale(0.95)';
+        section.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        cardObserver.observe(section);
+    });
+
+    // Observe individual card elements
+    const cardElements = document.querySelectorAll('.project-card, .skill-category, .stat');
+    cardElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(40px) scale(0.9)';
+        element.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        cardElementObserver.observe(element);
     });
 });
