@@ -1033,42 +1033,55 @@ section {
     .nav-links {
         display: none;
     }
-    
+
     .nav-toggle {
         display: flex;
     }
-    
+
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .hero-buttons {
         justify-content: center;
     }
-    
+
     .profile-img {
         width: 250px;
         height: 250px;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .modal-content {
         margin: 10% auto;
         width: 95%;
+    }
+
+    /* Mobile card transitions */
+    .card-hover-effect:hover {
+        transform: translateY(-3px) scale(1.01);
+    }
+
+    .page-transition {
+        backdrop-filter: blur(5px);
+    }
+
+    section {
+        padding: 60px 0;
     }
 }
 
