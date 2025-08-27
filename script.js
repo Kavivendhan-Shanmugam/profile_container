@@ -268,7 +268,7 @@ async function saveProfileData() {
     try {
         // Add loading state
         form.classList.add('loading');
-        
+
         const response = await fetch('/.netlify/functions/update_profile', {
             method: 'POST',
             headers: {
@@ -276,20 +276,41 @@ async function saveProfileData() {
             },
             body: JSON.stringify(newData)
         });
-        
+
         if (response.ok) {
             profileData = { ...profileData, ...newData };
             updateUIWithData(profileData);
             showMessage('Profile updated successfully!', 'success');
             setTimeout(() => {
-                document.getElementById('admin-modal').style.display = 'none';
+                const modal = document.getElementById('admin-modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                }
             }, 1500);
         } else {
-            throw new Error('Failed to update profile');
+            // Try to get error message from response
+            let errorMessage = 'Failed to update profile';
+            try {
+                const errorData = await response.json();
+                errorMessage = errorData.message || errorData.error || errorMessage;
+            } catch (e) {
+                // Ignore JSON parsing errors
+            }
+            throw new Error(errorMessage);
         }
     } catch (error) {
         console.error('Error updating profile:', error);
-        showMessage('Error updating profile. Please try again.', 'error');
+
+        // Update local data even if API fails
+        profileData = { ...profileData, ...newData };
+        updateUIWithData(profileData);
+
+        // Show appropriate error message
+        if (error.name === 'TypeError' && error.message.includes('fetch')) {
+            showMessage('Changes saved locally. API connection unavailable.', 'success');
+        } else {
+            showMessage(`Error: ${error.message}`, 'error');
+        }
     } finally {
         form.classList.remove('loading');
     }
