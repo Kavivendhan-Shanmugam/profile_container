@@ -179,8 +179,11 @@ function showAdminDashboard() {
 
     // Show the main admin dashboard
     modalContent.innerHTML = `
-        <span class="close">&times;</span>
+        <span class="close" title="Close Admin Panel">&times;</span>
         <h2>Admin Dashboard</h2>
+        <div class="modal-info">
+            <p><i class="fas fa-info-circle"></i> Modal stays open while editing. Use the X button or Logout to close.</p>
+        </div>
         <div class="admin-nav">
             <button id="edit-profile-btn" class="btn btn-primary">Edit Profile</button>
             <button id="manage-content-btn" class="btn btn-primary">Manage Content</button>
