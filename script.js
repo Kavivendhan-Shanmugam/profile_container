@@ -212,6 +212,34 @@ function showProfileEditor() {
 
     adminContent.innerHTML = `
         <h3>Edit Profile</h3>
+
+        <!-- Image Management Section -->
+        <div class="image-management-section">
+            <h4>Profile Images</h4>
+            <div class="image-uploads">
+                <div class="image-upload-group">
+                    <label for="real-photo-upload">Real Photo (shown on hover):</label>
+                    <div class="current-image-preview">
+                        <img id="real-photo-preview" src="https://cdn.builder.io/api/v1/image/assets%2F35bcde9c1868452f8649cd74edf8e7ae%2F71547f016e4544dfa06fa4648dd748a1?format=webp&width=800" alt="Current Real Photo" class="image-preview">
+                    </div>
+                    <input type="file" id="real-photo-upload" accept="image/*" class="file-input">
+                    <button type="button" id="upload-real-photo" class="btn btn-secondary">Upload New Real Photo</button>
+                    <button type="button" id="reset-real-photo" class="btn btn-outline">Reset to Default</button>
+                </div>
+
+                <div class="image-upload-group">
+                    <label for="illustrated-photo-upload">Illustrated Character (default view):</label>
+                    <div class="current-image-preview">
+                        <img id="illustrated-photo-preview" src="https://cdn.builder.io/api/v1/image/assets%2F35bcde9c1868452f8649cd74edf8e7ae%2F324370f46a8044788fe72961f055c274?format=webp&width=800" alt="Current Illustrated Photo" class="image-preview">
+                    </div>
+                    <input type="file" id="illustrated-photo-upload" accept="image/*" class="file-input">
+                    <button type="button" id="upload-illustrated-photo" class="btn btn-secondary">Upload New Illustrated Photo</button>
+                    <button type="button" id="reset-illustrated-photo" class="btn btn-outline">Reset to Default</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Data Form -->
         <form id="admin-form">
             <div class="form-group">
                 <label for="subtitle">Subtitle:</label>
@@ -257,6 +285,9 @@ function showProfileEditor() {
         </form>
     `;
 
+    // Initialize image upload functionality
+    initializeImageUploads();
+
     // Populate form with current data
     Object.keys(profileData).forEach(key => {
         const input = document.getElementById(key);
@@ -270,16 +301,109 @@ function showProfileEditor() {
     form.addEventListener('submit', saveProfileData);
 }
 
+// Initialize image upload functionality
+function initializeImageUploads() {
+    // Real photo upload
+    const realPhotoUpload = document.getElementById('real-photo-upload');
+    const uploadRealPhotoBtn = document.getElementById('upload-real-photo');
+    const resetRealPhotoBtn = document.getElementById('reset-real-photo');
+    const realPhotoPreview = document.getElementById('real-photo-preview');
+
+    // Illustrated photo upload
+    const illustratedPhotoUpload = document.getElementById('illustrated-photo-upload');
+    const uploadIllustratedPhotoBtn = document.getElementById('upload-illustrated-photo');
+    const resetIllustratedPhotoBtn = document.getElementById('reset-illustrated-photo');
+    const illustratedPhotoPreview = document.getElementById('illustrated-photo-preview');
+
+    // Real photo upload button click
+    uploadRealPhotoBtn.addEventListener('click', () => {
+        realPhotoUpload.click();
+    });
+
+    // Illustrated photo upload button click
+    uploadIllustratedPhotoBtn.addEventListener('click', () => {
+        illustratedPhotoUpload.click();
+    });
+
+    // Real photo file change
+    realPhotoUpload.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            handleImageUpload(file, realPhotoPreview, 'real');
+        }
+    });
+
+    // Illustrated photo file change
+    illustratedPhotoUpload.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            handleImageUpload(file, illustratedPhotoPreview, 'illustrated');
+        }
+    });
+
+    // Reset buttons
+    resetRealPhotoBtn.addEventListener('click', () => {
+        const defaultRealPhotoUrl = 'https://cdn.builder.io/api/v1/image/assets%2F35bcde9c1868452f8649cd74edf8e7ae%2F71547f016e4544dfa06fa4648dd748a1?format=webp&width=800';
+        realPhotoPreview.src = defaultRealPhotoUrl;
+        updateProfileImage(defaultRealPhotoUrl, 'real');
+        showMessage('Real photo reset to default', 'success');
+    });
+
+    resetIllustratedPhotoBtn.addEventListener('click', () => {
+        const defaultIllustratedPhotoUrl = 'https://cdn.builder.io/api/v1/image/assets%2F35bcde9c1868452f8649cd74edf8e7ae%2F324370f46a8044788fe72961f055c274?format=webp&width=800';
+        illustratedPhotoPreview.src = defaultIllustratedPhotoUrl;
+        updateProfileImage(defaultIllustratedPhotoUrl, 'illustrated');
+        showMessage('Illustrated photo reset to default', 'success');
+    });
+}
+
+// Handle image upload
+function handleImageUpload(file, previewElement, imageType) {
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+        showMessage('Please select a valid image file', 'error');
+        return;
+    }
+
+    // Validate file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+        showMessage('Image size must be less than 5MB', 'error');
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const imageUrl = e.target.result;
+        previewElement.src = imageUrl;
+        updateProfileImage(imageUrl, imageType);
+        showMessage(`${imageType === 'real' ? 'Real photo' : 'Illustrated photo'} updated successfully!`, 'success');
+    };
+    reader.readAsDataURL(file);
+}
+
+// Update profile image in the main website
+function updateProfileImage(imageUrl, imageType) {
+    if (imageType === 'real') {
+        // Update the flip-front image (real photo shown on hover)
+        const flipFrontImg = document.querySelector('.flip-front .profile-img');
+        if (flipFrontImg) {
+            flipFrontImg.src = imageUrl;
+        }
+    } else if (imageType === 'illustrated') {
+        // Update the flip-back image (illustrated character - default view)
+        const flipBackImg = document.querySelector('.flip-back .profile-img');
+        if (flipBackImg) {
+            flipBackImg.src = imageUrl;
+        }
+    }
+}
+
 // Initialize modal functionality
 function initializeModal() {
     const modal = document.getElementById('admin-modal');
 
-    // Close modal when clicking outside
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
+    // Remove the auto-close functionality to prevent accidental closing
+    // Modal can only be closed via the X button or logout button
 }
 
 // Save profile data
