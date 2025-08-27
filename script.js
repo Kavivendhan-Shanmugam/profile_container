@@ -87,11 +87,148 @@ function initializeClickListener() {
     });
 }
 
-// Open admin modal
-function openAdminModal() {
+// Open admin login
+function openAdminLogin() {
     const modal = document.getElementById('admin-modal');
-    const form = document.getElementById('admin-form');
-    
+    const modalContent = modal.querySelector('.modal-content');
+
+    // Show login form first
+    modalContent.innerHTML = `
+        <span class="close">&times;</span>
+        <h2>Admin Login</h2>
+        <form id="admin-login-form">
+            <div class="form-group">
+                <label for="admin-username">Username:</label>
+                <input type="text" id="admin-username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="admin-password">Password:</label>
+                <input type="password" id="admin-password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <div id="login-error" class="error-message" style="display: none;">
+            Invalid credentials. Please try again.
+        </div>
+    `;
+
+    modal.style.display = 'block';
+
+    // Add login form handler
+    const loginForm = document.getElementById('admin-login-form');
+    loginForm.addEventListener('submit', handleAdminLogin);
+
+    // Re-add close functionality
+    const closeBtn = modal.querySelector('.close');
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+}
+
+// Handle admin login
+function handleAdminLogin(e) {
+    e.preventDefault();
+
+    const username = document.getElementById('admin-username').value;
+    const password = document.getElementById('admin-password').value;
+
+    // Simple authentication (in production, this should be server-side)
+    if (username === 'admin' && password === 'kavi2025') {
+        showAdminDashboard();
+    } else {
+        const errorDiv = document.getElementById('login-error');
+        errorDiv.style.display = 'block';
+        setTimeout(() => {
+            errorDiv.style.display = 'none';
+        }, 3000);
+    }
+}
+
+// Show admin dashboard after successful login
+function showAdminDashboard() {
+    const modal = document.getElementById('admin-modal');
+    const modalContent = modal.querySelector('.modal-content');
+
+    // Show the main admin dashboard
+    modalContent.innerHTML = `
+        <span class="close">&times;</span>
+        <h2>Admin Dashboard</h2>
+        <div class="admin-nav">
+            <button id="edit-profile-btn" class="btn btn-primary">Edit Profile</button>
+            <button id="manage-content-btn" class="btn btn-primary">Manage Content</button>
+            <button id="view-analytics-btn" class="btn btn-primary">View Analytics</button>
+            <button id="logout-btn" class="btn btn-secondary">Logout</button>
+        </div>
+        <div id="admin-content">
+            <h3>Welcome to Admin Dashboard</h3>
+            <p>Select an option above to manage your portfolio.</p>
+        </div>
+    `;
+
+    // Add dashboard functionality
+    document.getElementById('edit-profile-btn').addEventListener('click', showProfileEditor);
+    document.getElementById('logout-btn').addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Re-add close functionality
+    const closeBtn = modal.querySelector('.close');
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+}
+
+// Show profile editor
+function showProfileEditor() {
+    const adminContent = document.getElementById('admin-content');
+
+    adminContent.innerHTML = `
+        <h3>Edit Profile</h3>
+        <form id="admin-form">
+            <div class="form-group">
+                <label for="subtitle">Subtitle:</label>
+                <input type="text" id="subtitle" name="subtitle">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="about">About:</label>
+                <textarea id="about" name="about"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="projects_count">Projects Count:</label>
+                <input type="text" id="projects_count" name="projects_count">
+            </div>
+            <div class="form-group">
+                <label for="experience_years">Experience Years:</label>
+                <input type="text" id="experience_years" name="experience_years">
+            </div>
+            <div class="form-group">
+                <label for="clients_count">Clients Count:</label>
+                <input type="text" id="clients_count" name="clients_count">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location">
+            </div>
+            <div class="form-group">
+                <label for="contact_description">Contact Description:</label>
+                <textarea id="contact_description" name="contact_description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    `;
+
     // Populate form with current data
     Object.keys(profileData).forEach(key => {
         const input = document.getElementById(key);
@@ -99,8 +236,10 @@ function openAdminModal() {
             input.value = profileData[key] || '';
         }
     });
-    
-    modal.style.display = 'block';
+
+    // Add form submission handler
+    const form = document.getElementById('admin-form');
+    form.addEventListener('submit', saveProfileData);
 }
 
 // Initialize modal functionality
