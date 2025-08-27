@@ -133,7 +133,7 @@ function handleAdminLogin(e) {
     const password = document.getElementById('admin-password').value;
 
     // Simple authentication (in production, this should be server-side)
-    if (username === 'admin' && password === 'kavi2025') {
+    if (username === 'kavivendhan' && password === '06102004') {
         showAdminDashboard();
     } else {
         const errorDiv = document.getElementById('login-error');
