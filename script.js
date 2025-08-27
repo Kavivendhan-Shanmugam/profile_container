@@ -60,29 +60,29 @@ function updateUIWithData(data) {
     });
 }
 
-// Initialize profile image click listener for admin access
+// Initialize navigation logo click listener for admin access
 function initializeClickListener() {
-    const flipContainer = document.getElementById('flip-container');
-    
-    // Add click listener to the entire flip container
-    flipContainer.addEventListener('click', function(e) {
+    const navLogo = document.querySelector('.nav-logo-img');
+
+    // Add click listener to the navigation logo
+    navLogo.addEventListener('click', function(e) {
         clickCount++;
-        
+
         // Clear existing timer
         if (clickTimer) {
             clearTimeout(clickTimer);
         }
-        
+
         // Reset counter after 3 seconds of no clicks
         clickTimer = setTimeout(() => {
             clickCount = 0;
         }, 3000);
-        
+
         // Check if we've reached 11 clicks
         if (clickCount === 11) {
-            openAdminModal();
+            openAdminLogin();
             clickCount = 0; // Reset counter
-            e.preventDefault(); // Prevent the flip animation
+            e.preventDefault();
         }
     });
 }
