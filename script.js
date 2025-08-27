@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load profile data from API
 async function loadProfileData() {
     try {
-        const response = await fetch('/api/get_profile');
+        const response = await fetch('/.netlify/functions/get_profile');
         if (response.ok) {
             profileData = await response.json();
             updateUIWithData(profileData);
@@ -269,7 +269,7 @@ async function saveProfileData() {
         // Add loading state
         form.classList.add('loading');
         
-        const response = await fetch('/api/update_profile', {
+        const response = await fetch('/.netlify/functions/update_profile', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
