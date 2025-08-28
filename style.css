@@ -116,6 +116,22 @@ body {
     }
 }
 
+/* Subtle attention pulse every 5 seconds */
+.nav-logo-img {
+    animation: logo-entrance 1.5s ease-out, logo-pulse 5s ease-in-out 2s infinite;
+}
+
+@keyframes logo-pulse {
+    0%, 90%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    5% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 18px rgba(139, 95, 191, 0.4);
+    }
+}
+
 .nav-links {
     display: flex;
     list-style: none;
