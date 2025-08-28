@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     smoothScroll();
     loadProjects();
     initializeCardEffects();
+    initializeMobileNavigation();
+    initializeTouchOptimizations();
 });
 
 // Initialize card hover effects
