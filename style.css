@@ -57,6 +57,30 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.nav-logo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(139, 95, 191, 0.3), rgba(99, 102, 241, 0.2), transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.nav-logo:hover::before {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(139, 95, 191, 0.4), rgba(99, 102, 241, 0.3), transparent);
 }
 
 .nav-logo-img {
