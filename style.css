@@ -318,8 +318,29 @@ body {
     z-index: 2;
 }
 
-.flip-container:hover {
+.flip-container:hover,
+.flip-container.flipped {
     transform: rotateY(180deg);
+}
+
+/* Touch-specific improvements for flip container */
+@media (hover: none) and (pointer: coarse) {
+    .flip-container {
+        /* Remove hover effect on touch devices */
+    }
+
+    .flip-container:hover {
+        transform: none;
+    }
+
+    /* Add touch feedback */
+    .flip-container:active {
+        transform: scale(0.98);
+    }
+
+    .flip-container.flipped:active {
+        transform: rotateY(180deg) scale(0.98);
+    }
 }
 
 .flip-front,
