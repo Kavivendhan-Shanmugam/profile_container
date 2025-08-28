@@ -1121,13 +1121,41 @@ section {
     margin-top: 1rem;
 }
 
-/* Navigation logo styling */
+/* Enhanced Navigation logo styling with pop-out effect */
 .nav-logo-img {
-    transition: transform 0.2s ease;
+    /* Base styling already defined above */
 }
 
 .nav-logo-img:hover {
-    transform: scale(1.1);
+    transform: scale(1.25) translateY(-8px) rotate(5deg);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(139, 95, 191, 0.6),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+    filter: brightness(1.1) contrast(1.1);
+    animation: logo-glow 2s ease-in-out infinite;
+}
+
+.nav-logo-img:active {
+    transform: scale(1.15) translateY(-4px) rotate(2deg);
+    transition: all 0.1s ease;
+}
+
+/* Glowing animation for logo */
+@keyframes logo-glow {
+    0%, 100% {
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(139, 95, 191, 0.6),
+            inset 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow:
+            0 20px 45px rgba(0, 0, 0, 0.5),
+            0 0 40px rgba(99, 102, 241, 0.8),
+            inset 0 0 25px rgba(255, 255, 255, 0.3);
+    }
 }
 
 /* Card Animation States */
