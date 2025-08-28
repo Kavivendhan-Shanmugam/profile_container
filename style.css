@@ -786,12 +786,64 @@ section {
     animation: js-bounce 0.8s ease-in-out infinite;
 }
 
+.skill-tag[data-skill="typescript"]:hover .skill-icon {
+    animation: typescript-type 1.2s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="html5"]:hover .skill-icon {
+    animation: html-structure 1.8s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="css3"]:hover .skill-icon {
+    animation: css-cascade 1.5s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="tailwind"]:hover .skill-icon {
+    animation: tailwind-wind 1.3s ease-in-out infinite;
+}
+
 .skill-tag[data-skill="nodejs"]:hover .skill-icon {
     animation: node-glow 2s ease-in-out infinite;
 }
 
+.skill-tag[data-skill="express"]:hover .skill-icon {
+    animation: express-server 1.4s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="python"]:hover .skill-icon {
+    animation: python-slither 2.2s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="fastapi"]:hover .skill-icon {
+    animation: fastapi-rocket 1.6s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="mongodb"]:hover .skill-icon {
+    animation: mongo-leaf 1.8s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="postgresql"]:hover .skill-icon {
+    animation: postgres-elephant 1.7s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="git"]:hover .skill-icon {
+    animation: git-branch 1.5s ease-in-out infinite;
+}
+
 .skill-tag[data-skill="docker"]:hover .skill-icon {
-    animation: docker-float 2s ease-in-out infinite;
+    animation: docker-container 2s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="aws"]:hover .skill-icon {
+    animation: aws-cloud 2.1s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="figma"]:hover .skill-icon {
+    animation: figma-design 1.4s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="photoshop"]:hover .skill-icon {
+    animation: photoshop-brush 1.3s ease-in-out infinite;
 }
 
 /* Keyframe animations */
