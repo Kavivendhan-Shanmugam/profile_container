@@ -564,7 +564,7 @@ function triggerCardTransition(targetSection) {
     allSections.forEach(section => {
         if (section !== targetSection) {
             section.style.transform = 'translateX(-50px) scale(0.98)';
-            section.style.opacity = '0.4';
+            section.style.opacity = '0.8';
             section.style.transition = 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         }
     });
