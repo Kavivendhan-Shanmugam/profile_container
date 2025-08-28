@@ -733,24 +733,78 @@ section {
 }
 
 /* Technology-specific icon colors */
-.skill-tag[data-skill="react"] .skill-icon { color: #61dafb; }
-.skill-tag[data-skill="vue"] .skill-icon { color: #4fc08d; }
-.skill-tag[data-skill="javascript"] .skill-icon { color: #f7df1e; }
-.skill-tag[data-skill="typescript"] .skill-icon { color: #3178c6; }
-.skill-tag[data-skill="html5"] .skill-icon { color: #e34f26; }
-.skill-tag[data-skill="css3"] .skill-icon { color: #1572b6; }
-.skill-tag[data-skill="tailwind"] .skill-icon { color: #06b6d4; }
-.skill-tag[data-skill="nodejs"] .skill-icon { color: #339933; }
-.skill-tag[data-skill="express"] .skill-icon { color: #000000; }
-.skill-tag[data-skill="python"] .skill-icon { color: #3776ab; }
-.skill-tag[data-skill="fastapi"] .skill-icon { color: #009688; }
-.skill-tag[data-skill="mongodb"] .skill-icon { color: #47a248; }
-.skill-tag[data-skill="postgresql"] .skill-icon { color: #336791; }
-.skill-tag[data-skill="git"] .skill-icon { color: #f05032; }
-.skill-tag[data-skill="docker"] .skill-icon { color: #2496ed; }
-.skill-tag[data-skill="aws"] .skill-icon { color: #ff9900; }
-.skill-tag[data-skill="figma"] .skill-icon { color: #f24e1e; }
-.skill-tag[data-skill="photoshop"] .skill-icon { color: #31a8ff; }
+.skill-tag[data-skill="react"] .skill-icon {
+    color: #61dafb;
+    filter: drop-shadow(0 0 3px rgba(97, 218, 251, 0.3));
+}
+.skill-tag[data-skill="vue"] .skill-icon {
+    color: #4fc08d;
+    filter: drop-shadow(0 0 3px rgba(79, 192, 141, 0.3));
+}
+.skill-tag[data-skill="javascript"] .skill-icon {
+    color: #f7df1e;
+    filter: drop-shadow(0 0 3px rgba(247, 223, 30, 0.4));
+}
+.skill-tag[data-skill="typescript"] .skill-icon {
+    color: #3178c6;
+    filter: drop-shadow(0 0 3px rgba(49, 120, 198, 0.3));
+}
+.skill-tag[data-skill="html5"] .skill-icon {
+    color: #e34f26;
+    filter: drop-shadow(0 0 3px rgba(227, 79, 38, 0.3));
+}
+.skill-tag[data-skill="css3"] .skill-icon {
+    color: #1572b6;
+    filter: drop-shadow(0 0 3px rgba(21, 114, 182, 0.3));
+}
+.skill-tag[data-skill="tailwind"] .skill-icon {
+    color: #06b6d4;
+    filter: drop-shadow(0 0 3px rgba(6, 182, 212, 0.3));
+}
+.skill-tag[data-skill="nodejs"] .skill-icon {
+    color: #339933;
+    filter: drop-shadow(0 0 3px rgba(51, 153, 51, 0.3));
+}
+.skill-tag[data-skill="express"] .skill-icon {
+    color: #666666;
+    filter: drop-shadow(0 0 3px rgba(102, 102, 102, 0.3));
+}
+.skill-tag[data-skill="python"] .skill-icon {
+    color: #3776ab;
+    filter: drop-shadow(0 0 3px rgba(55, 118, 171, 0.3));
+}
+.skill-tag[data-skill="fastapi"] .skill-icon {
+    color: #009688;
+    filter: drop-shadow(0 0 3px rgba(0, 150, 136, 0.3));
+}
+.skill-tag[data-skill="mongodb"] .skill-icon {
+    color: #47a248;
+    filter: drop-shadow(0 0 3px rgba(71, 162, 72, 0.3));
+}
+.skill-tag[data-skill="postgresql"] .skill-icon {
+    color: #336791;
+    filter: drop-shadow(0 0 3px rgba(51, 103, 145, 0.3));
+}
+.skill-tag[data-skill="git"] .skill-icon {
+    color: #f05032;
+    filter: drop-shadow(0 0 3px rgba(240, 80, 50, 0.3));
+}
+.skill-tag[data-skill="docker"] .skill-icon {
+    color: #2496ed;
+    filter: drop-shadow(0 0 3px rgba(36, 150, 237, 0.3));
+}
+.skill-tag[data-skill="aws"] .skill-icon {
+    color: #ff9900;
+    filter: drop-shadow(0 0 3px rgba(255, 153, 0, 0.3));
+}
+.skill-tag[data-skill="figma"] .skill-icon {
+    color: #f24e1e;
+    filter: drop-shadow(0 0 3px rgba(242, 78, 30, 0.3));
+}
+.skill-tag[data-skill="photoshop"] .skill-icon {
+    color: #31a8ff;
+    filter: drop-shadow(0 0 3px rgba(49, 168, 255, 0.3));
+}
 
 .skill-tag:hover::before {
     left: 0;
