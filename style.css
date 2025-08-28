@@ -1203,13 +1203,18 @@ section {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #333;
+    color: #1e293b;
+    position: relative;
+    z-index: 2;
 }
 
 .project-description {
-    color: #64748b;
+    color: #475569;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    font-weight: 400;
 }
 
 .project-tech {
