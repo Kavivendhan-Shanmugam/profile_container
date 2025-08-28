@@ -626,15 +626,19 @@ section {
 .skill-tag {
     background: linear-gradient(45deg, #e0e7ff, #f1f5f9);
     color: #6366f1;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(99, 102, 241, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    backdrop-filter: blur(10px);
 }
 
 .skill-tag::before {
@@ -645,9 +649,43 @@ section {
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, #6366f1, #8b5fbf);
-    transition: left 0.3s ease;
+    transition: left 0.4s ease;
     z-index: -1;
 }
+
+.skill-icon {
+    font-size: 1.3rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    z-index: 1;
+}
+
+.skill-name {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Technology-specific icon colors */
+.skill-tag[data-skill="react"] .skill-icon { color: #61dafb; }
+.skill-tag[data-skill="vue"] .skill-icon { color: #4fc08d; }
+.skill-tag[data-skill="javascript"] .skill-icon { color: #f7df1e; }
+.skill-tag[data-skill="typescript"] .skill-icon { color: #3178c6; }
+.skill-tag[data-skill="html5"] .skill-icon { color: #e34f26; }
+.skill-tag[data-skill="css3"] .skill-icon { color: #1572b6; }
+.skill-tag[data-skill="tailwind"] .skill-icon { color: #06b6d4; }
+.skill-tag[data-skill="nodejs"] .skill-icon { color: #339933; }
+.skill-tag[data-skill="express"] .skill-icon { color: #000000; }
+.skill-tag[data-skill="python"] .skill-icon { color: #3776ab; }
+.skill-tag[data-skill="fastapi"] .skill-icon { color: #009688; }
+.skill-tag[data-skill="mongodb"] .skill-icon { color: #47a248; }
+.skill-tag[data-skill="postgresql"] .skill-icon { color: #336791; }
+.skill-tag[data-skill="git"] .skill-icon { color: #f05032; }
+.skill-tag[data-skill="docker"] .skill-icon { color: #2496ed; }
+.skill-tag[data-skill="aws"] .skill-icon { color: #ff9900; }
+.skill-tag[data-skill="figma"] .skill-icon { color: #f24e1e; }
+.skill-tag[data-skill="photoshop"] .skill-icon { color: #31a8ff; }
 
 .skill-tag:hover::before {
     left: 0;
@@ -655,8 +693,72 @@ section {
 
 .skill-tag:hover {
     color: white;
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+    transform: scale(1.08) translateY(-4px) rotate(2deg);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.4);
+}
+
+.skill-tag:hover .skill-icon {
+    transform: rotate(-10deg) scale(1.2);
+    color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.skill-tag:hover .skill-name {
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Special animations for specific technologies */
+.skill-tag[data-skill="react"]:hover .skill-icon {
+    animation: react-spin 2s linear infinite;
+}
+
+.skill-tag[data-skill="vue"]:hover .skill-icon {
+    animation: vue-pulse 1.5s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="javascript"]:hover .skill-icon {
+    animation: js-bounce 0.8s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="nodejs"]:hover .skill-icon {
+    animation: node-glow 2s ease-in-out infinite;
+}
+
+.skill-tag[data-skill="docker"]:hover .skill-icon {
+    animation: docker-float 2s ease-in-out infinite;
+}
+
+/* Keyframe animations */
+@keyframes react-spin {
+    from { transform: rotate(-10deg) scale(1.2); }
+    to { transform: rotate(350deg) scale(1.2); }
+}
+
+@keyframes vue-pulse {
+    0%, 100% { transform: rotate(-10deg) scale(1.2); }
+    50% { transform: rotate(-10deg) scale(1.4); }
+}
+
+@keyframes js-bounce {
+    0%, 100% { transform: rotate(-10deg) scale(1.2) translateY(0); }
+    50% { transform: rotate(-10deg) scale(1.3) translateY(-3px); }
+}
+
+@keyframes node-glow {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2);
+        filter: brightness(1);
+    }
+    50% {
+        transform: rotate(-10deg) scale(1.3);
+        filter: brightness(1.3);
+    }
+}
+
+@keyframes docker-float {
+    0%, 100% { transform: rotate(-10deg) scale(1.2) translateY(0); }
+    50% { transform: rotate(-10deg) scale(1.25) translateY(-2px); }
 }
 
 /* Projects Section */
