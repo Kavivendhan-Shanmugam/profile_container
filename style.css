@@ -1707,6 +1707,19 @@ section {
         height: 40px;
     }
 
+    /* Reduce logo pop-out effect on mobile */
+    .nav-logo-img:hover {
+        transform: scale(1.15) translateY(-4px) rotate(3deg);
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.3),
+            0 0 20px rgba(139, 95, 191, 0.5);
+    }
+
+    .nav-logo:hover::before {
+        width: 60px;
+        height: 60px;
+    }
+
     /* Modal improvements for small screens */
     .modal-content {
         margin: 1% auto;
