@@ -730,9 +730,9 @@ const cardObserver = new IntersectionObserver(function(entries) {
             // Trigger staggered animations for child elements
             animateCardElements(entry.target);
         } else {
-            // Subtle out animation when leaving viewport
-            entry.target.style.opacity = '0.8';
-            entry.target.style.transform = 'translateY(10px) scale(0.98)';
+            // Keep sections fully visible when out of view
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0) scale(1)';
         }
     });
 }, observerOptions);
