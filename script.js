@@ -412,7 +412,9 @@ function initializeModal() {
 }
 
 // Save profile data
-async function saveProfileData() {
+async function saveProfileData(event) {
+    event.preventDefault(); // Prevent form from reloading the page
+
     const form = document.getElementById('admin-form');
     const formData = new FormData(form);
     const newData = {};
