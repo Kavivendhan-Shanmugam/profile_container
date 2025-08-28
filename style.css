@@ -629,6 +629,15 @@ section {
     z-index: 2;
 }
 
+.about .section-title {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about .section-title::after {
+    background: linear-gradient(45deg, #6366f1, #8b5fbf);
+}
+
 .about-content {
     max-width: 800px;
     margin: 0 auto;
