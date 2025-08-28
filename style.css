@@ -862,20 +862,180 @@ section {
     50% { transform: rotate(-10deg) scale(1.3) translateY(-3px); }
 }
 
-@keyframes node-glow {
+@keyframes typescript-type {
+    0%, 100% { transform: rotate(-10deg) scale(1.2); }
+    25% { transform: rotate(-10deg) scale(1.15); }
+    50% { transform: rotate(-10deg) scale(1.25); }
+    75% { transform: rotate(-10deg) scale(1.18); }
+}
+
+@keyframes html-structure {
     0%, 100% {
-        transform: rotate(-10deg) scale(1.2);
-        filter: brightness(1);
+        transform: rotate(-10deg) scale(1.2) skewX(0deg);
     }
-    50% {
-        transform: rotate(-10deg) scale(1.3);
-        filter: brightness(1.3);
+    33% {
+        transform: rotate(-10deg) scale(1.25) skewX(2deg);
+    }
+    66% {
+        transform: rotate(-10deg) scale(1.3) skewX(-2deg);
     }
 }
 
-@keyframes docker-float {
-    0%, 100% { transform: rotate(-10deg) scale(1.2) translateY(0); }
-    50% { transform: rotate(-10deg) scale(1.25) translateY(-2px); }
+@keyframes css-cascade {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) translateX(0);
+    }
+    25% {
+        transform: rotate(-10deg) scale(1.25) translateX(-1px);
+    }
+    50% {
+        transform: rotate(-10deg) scale(1.3) translateX(1px);
+    }
+    75% {
+        transform: rotate(-10deg) scale(1.25) translateX(-1px);
+    }
+}
+
+@keyframes tailwind-wind {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) translateX(0);
+    }
+    50% {
+        transform: rotate(-5deg) scale(1.25) translateX(3px);
+    }
+}
+
+@keyframes node-glow {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2);
+        filter: brightness(1) drop-shadow(0 0 5px rgba(51, 153, 51, 0.5));
+    }
+    50% {
+        transform: rotate(-10deg) scale(1.3);
+        filter: brightness(1.3) drop-shadow(0 0 10px rgba(51, 153, 51, 0.8));
+    }
+}
+
+@keyframes express-server {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(-10deg) scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes python-slither {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) translateX(0);
+    }
+    25% {
+        transform: rotate(-15deg) scale(1.25) translateX(1px);
+    }
+    50% {
+        transform: rotate(-5deg) scale(1.3) translateX(-1px);
+    }
+    75% {
+        transform: rotate(-15deg) scale(1.25) translateX(1px);
+    }
+}
+
+@keyframes fastapi-rocket {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) translateY(0);
+    }
+    50% {
+        transform: rotate(-10deg) scale(1.3) translateY(-4px);
+        filter: brightness(1.2);
+    }
+}
+
+@keyframes mongo-leaf {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) rotate(0deg);
+    }
+    50% {
+        transform: rotate(-10deg) scale(1.25) rotate(5deg);
+    }
+}
+
+@keyframes postgres-elephant {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) translateY(0);
+    }
+    50% {
+        transform: rotate(-8deg) scale(1.25) translateY(-1px);
+    }
+}
+
+@keyframes git-branch {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) skewY(0deg);
+    }
+    33% {
+        transform: rotate(-10deg) scale(1.25) skewY(2deg);
+    }
+    66% {
+        transform: rotate(-10deg) scale(1.3) skewY(-2deg);
+    }
+}
+
+@keyframes docker-container {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) translateY(0);
+        box-shadow: 0 0 10px rgba(36, 150, 237, 0.3);
+    }
+    50% {
+        transform: rotate(-10deg) scale(1.25) translateY(-2px);
+        box-shadow: 0 0 15px rgba(36, 150, 237, 0.6);
+    }
+}
+
+@keyframes aws-cloud {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) translateX(0);
+        filter: brightness(1);
+    }
+    33% {
+        transform: rotate(-10deg) scale(1.25) translateX(1px);
+        filter: brightness(1.1);
+    }
+    66% {
+        transform: rotate(-10deg) scale(1.3) translateX(-1px);
+        filter: brightness(1.2);
+    }
+}
+
+@keyframes figma-design {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg) scale(1.25) rotate(2deg);
+    }
+    50% {
+        transform: rotate(-10deg) scale(1.3) rotate(-2deg);
+    }
+    75% {
+        transform: rotate(-10deg) scale(1.25) rotate(2deg);
+    }
+}
+
+@keyframes photoshop-brush {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.2) translateX(0) translateY(0);
+    }
+    25% {
+        transform: rotate(-10deg) scale(1.25) translateX(1px) translateY(-1px);
+    }
+    50% {
+        transform: rotate(-10deg) scale(1.3) translateX(-1px) translateY(1px);
+    }
+    75% {
+        transform: rotate(-10deg) scale(1.25) translateX(1px) translateY(-1px);
+    }
 }
 
 /* Projects Section */
