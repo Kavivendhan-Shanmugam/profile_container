@@ -1770,8 +1770,23 @@ section {
         transform: none;
     }
 
+    /* Touch-friendly skill tag interactions */
+    .skill-tag {
+        touch-action: manipulation;
+    }
+
     .skill-tag:hover {
         transform: scale(1.02);
+    }
+
+    .skill-tag:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+
+    .skill-tag:hover .skill-icon {
+        transform: scale(1.05);
+        animation: none; /* Disable complex animations on touch */
     }
 
     .social-link:hover {
